@@ -7,7 +7,7 @@ Gui, Add, Edit, x122 y69 w80 h20 vTransParency, 150
 Gui, Add, Text, x32 y73 w78 h20 vL_TransParency Right, TransParency
 Gui, Add, Text, x12 y9 w440 h20 vL_MadeBy, MadeBy. mirusu400    osu Alternative Gamma Controller
 Gui, Add, Text, x322 y73 w88 h20 vL_Language Right, Language
-Gui, Add, DropDownList, x412 y69 w100 h60 gLang vLanguage, English|ÇÑ±¹¾î
+Gui, Add, DropDownList, x412 y69 w100 h60 gLang vLanguage, English|í•œêµ­ì–´
 Gui, Add, GroupBox, x32 y99 w260 h120 vL_CustomSize, Custom Size
 Gui, Add, CheckBox, x42 y109 w200 h40 gUseCustom_L vUseCustom, Use Custom Size Gamma`n(Default if Blank)
 Gui, Add, Edit, x82 y149 w60 h20 vX, 
@@ -19,7 +19,7 @@ Gui, Add, Text, x42 y182 w38 h20 Right, Y
 Gui, Add, Text, x162 y152 w48 h20 vL_Width Right, Width
 Gui, Add, Text, x162 y182 w48 h20 vL_Height Right, Height
 Gui, Add, Button, x312 y149 w200 h70 gSaveRun vSave, Save / Run
-Gui, Add, Text, x312 y99 w100 h20 vL_BGColor, BG Color
+Gui, Add, Text, x312 y102 w98 h20 vL_BGColor Right, BG Color
 Gui, Add, DropDownList, x412 y99 w100 h100 vBGColor, White|Black|Red|Blue|Green
 ; Generated using SmartGUI Creator 4.0
 Gui, Show,  h252 w546, New GUI Window
@@ -63,15 +63,15 @@ return
 
 
 Load:
-IniRead, TransParency, save.ini, ÀúÀå, TransParency
-IniRead, SlideVal, save.ini, ÀúÀå, SlideVal
-IniRead, Language, save.ini, ÀúÀå, Language
-IniRead, UseCustom, save.ini, ÀúÀå, UseCustom
-IniRead, X, save.ini, ÀúÀå, X
-IniRead, Y, save.ini, ÀúÀå, Y
-IniRead, Width, save.ini, ÀúÀå, Width
-IniRead, Height, save.ini, ÀúÀå, Height
-IniRead, BGColor, save.ini, ÀúÀå, BGColor
+IniRead, TransParency, save.ini, ì €ì¥, TransParency
+IniRead, SlideVal, save.ini, ì €ì¥, SlideVal
+IniRead, Language, save.ini, ì €ì¥, Language
+IniRead, UseCustom, save.ini, ì €ì¥, UseCustom
+IniRead, X, save.ini, ì €ì¥, X
+IniRead, Y, save.ini, ì €ì¥, Y
+IniRead, Width, save.ini, ì €ì¥, Width
+IniRead, Height, save.ini, ì €ì¥, Height
+IniRead, BGColor, save.ini, ì €ì¥, BGColor
 Guicontrol,,TransParency,%TransParency%
 Guicontrol,,SlideVal,%SlideVal%
 GuiControl, ChooseString, Language, %Language%
@@ -89,15 +89,15 @@ return
 
 SaveRun:
 Gui, Submit, hide
-IniWrite, %TransParency%, save.ini, ÀúÀå, TransParency
-IniWrite, %SlideVal%, save.ini, ÀúÀå, SlideVal
-IniWrite, %Language%, save.ini, ÀúÀå, Language
-IniWrite, %UseCustom%, save.ini, ÀúÀå, UseCustom
-IniWrite, %X%, save.ini, ÀúÀå, X
-IniWrite, %Y%, save.ini, ÀúÀå, Y
-IniWrite, %Width%, save.ini, ÀúÀå, Width
-IniWrite, %Height%, save.ini, ÀúÀå, Height
-IniWrite, %BGColor%, save.ini, ÀúÀå, BGColor
+IniWrite, %TransParency%, save.ini, ì €ì¥, TransParency
+IniWrite, %SlideVal%, save.ini, ì €ì¥, SlideVal
+IniWrite, %Language%, save.ini, ì €ì¥, Language
+IniWrite, %UseCustom%, save.ini, ì €ì¥, UseCustom
+IniWrite, %X%, save.ini, ì €ì¥, X
+IniWrite, %Y%, save.ini, ì €ì¥, Y
+IniWrite, %Width%, save.ini, ì €ì¥, Width
+IniWrite, %Height%, save.ini, ì €ì¥, Height
+IniWrite, %BGColor%, save.ini, ì €ì¥, BGColor
 ToolTip, Gamma Will Turn On When Osu Activate., A_ScreenWidth, A_ScreenHeight
 SetTimer, RemoveToolTip, -3000
 loop
@@ -166,18 +166,18 @@ if(Language == "English")
 	Guicontrol,,Save,Save / Run
 	Guicontrol,,L_BGColor,BG Color
 }
-if(Language == "ÇÑ±¹¾î")
+if(Language == "í•œêµ­ì–´")
 {
-	Guicontrol,,L_GroupTrans,Åõ¸íµµ ¼³Á¤
-	Guicontrol,,L_TransParency,Åõ¸íµµ(°¨¸¶)
-	Guicontrol,,L_Language,¾ğ¾î
-	Guicontrol,,L_MadeBy,Á¦ÀÛ: mirusu400    ¿À½º ¼öµ¿ °¨¸¶ ÄÁÆ®·Ñ·¯
-	Guicontrol,,L_CustomSize,¼öµ¿ Å©±â
-	Guicontrol,,UseCustom,¼öµ¿À¸·Î °¨¸¶ ¿µ¿ª ÁöÁ¤ÇÏ±â`n(ºóÄ­ÀÏ½Ã ±âº»°ª)
-	Guicontrol,,L_Width,°¡·Î
-	Guicontrol,,L_Height,¼¼·Î
-	Guicontrol,,Save,ÀúÀå ¹× ½ÇÇà
-	Guicontrol,,L_BGColor,¹è°æ »ö
+	Guicontrol,,L_GroupTrans,íˆ¬ëª…ë„ ì„¤ì •
+	Guicontrol,,L_TransParency,íˆ¬ëª…ë„(ê°ë§ˆ)
+	Guicontrol,,L_Language,ì–¸ì–´
+	Guicontrol,,L_MadeBy,ì œì‘: mirusu400    ì˜¤ìŠ¤ ìˆ˜ë™ ê°ë§ˆ ì»¨íŠ¸ë¡¤ëŸ¬
+	Guicontrol,,L_CustomSize,ìˆ˜ë™ í¬ê¸°
+	Guicontrol,,UseCustom,ìˆ˜ë™ìœ¼ë¡œ ê°ë§ˆ ì˜ì—­ ì§€ì •í•˜ê¸°`n(ë¹ˆì¹¸ì¼ì‹œ ê¸°ë³¸ê°’)
+	Guicontrol,,L_Width,ê°€ë¡œ
+	Guicontrol,,L_Height,ì„¸ë¡œ
+	Guicontrol,,Save,ì €ì¥ ë° ì‹¤í–‰
+	Guicontrol,,L_BGColor,ë°°ê²½ ìƒ‰
 }
 return
 
