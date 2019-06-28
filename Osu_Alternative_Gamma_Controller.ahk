@@ -23,10 +23,14 @@ Gui, Add, Text, x312 y102 w98 h20 vL_BGColor Right, BG Color
 Gui, Add, DropDownList, x412 y99 w100 h100 vBGColor, White|Black|Red|Blue|Green
 ; Generated using SmartGUI Creator 4.0
 Gui, Show,  h252 w546, New GUI Window
+GuiControl, ChooseString, BGColor, White
+GuiControl, ChooseString, Language, English
 GuiControl,Disabled,X
 GuiControl,Disabled,Y
 GuiControl,Disabled,Width
 GuiControl,Disabled,Height
+OnExit("ExitFunc")
+
 ifExist,save.ini
 {
 	Gosub,Load
@@ -55,6 +59,11 @@ SplashImageGUI(X, Y, W, H, BGColor, Destroy=0)
 	Gui, XPT99:+LastFound -Caption +ToolWindow -Border
 	Gui, XPT99:Show, x%X% y%Y% w%W% h%H%
 	return
+}
+ExitFunc(ExitReason, ExitCode)
+{
+    Gui, XPT99:Destroy
+	WinSet, Transparent, 255, ahk_exe osu!.exe
 }
 
 ShowGui:
@@ -117,7 +126,6 @@ loop
 		}
 		sleep,1000
 	}
-	WinActivate,ahk_exe osu!.exe
 	loop
 	{
 		if !WinActive("ahk_exe osu!.exe")
